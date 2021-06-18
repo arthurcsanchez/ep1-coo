@@ -13,7 +13,7 @@ public class Player {
 	private double height;
 	private Color color;
 	private String id;
-	private double[] v_limit;
+	private double [] v_limit;
 	private double speed;
 
 	/**
@@ -29,7 +29,7 @@ public class Player {
 		@param speed velocidade do movimento vertical do player (em pixels por millisegundo).
 	*/
 
-	public Player(double cx, double cy, double width, double height, Color color, String id, double [] v_limit, double speed){
+	public Player(double cx, double cy, double width, double height, Color color, String id, double [] v_limit, double speed) {
 		this.cx = cx;
 		this.cy = cy;
 		this.width = width;
@@ -44,8 +44,7 @@ public class Player {
 		Método chamado sempre que o player precisa ser (re)desenhado.
 	*/
 
-	public void draw(){
-		// Resolver GameLib
+	public void draw() {
 		GameLib.setColor(this.color);
 		GameLib.fillRect(this.cx, this.cy, this.width, this.height);
 	}
@@ -58,8 +57,12 @@ public class Player {
 		@param delta quantidade de millisegundos que se passou entre o ciclo anterior de atualização do jogo e o atual.
 	*/
 
-	public void moveUp(long delta){
-		// Implementar moveUp()
+	public void moveUp(long delta) {
+		for (long i = 0; i < delta; i++) {
+			if (v_limit[0] == (cy - height/2)) break;
+			cy--;
+		}
+		draw();
 	}
 
 	/**
@@ -70,8 +73,12 @@ public class Player {
 		@param delta quantidade de millisegundos que se passou entre o ciclo anterior de atualização do jogo e o atual.
 	*/
 
-	public void moveDown(long delta){
-		// Implementar moveDown()
+	public void moveDown(long delta) {
+		for (long i = 0; i < delta; i++) {
+			if (v_limit[1] == (cy + height/2)) break;
+			cy++;
+		}
+		draw();
 	}
 
 	/**
