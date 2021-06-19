@@ -53,7 +53,10 @@ public class Ball {
 	*/
 
 	public void update(long delta) {
-
+		for (long i = 0; i < delta; i++) {
+			cy += speed;
+			cx += speed;
+		}
 	}
 
 	/**
