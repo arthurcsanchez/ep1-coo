@@ -1,5 +1,5 @@
 Arthur Calhares de Almeida Sanchez - 11831039
-Julianne Amanda de Sá Laurindo - 11xxxxxx
+Julianne Amanda de Sá Laurindo - 11894590
 
 -------
 
