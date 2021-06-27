@@ -124,8 +124,15 @@ public class Ball {
 	*/	
 
 	public boolean checkCollision(Player player) {
-		boolean isAtSameY = (player.getCy() - player.getHeight()/2) <= cy || (player.getCy() + player.getHeight()/2) >= cy;
-		boolean isAtSameX = (player.getCx() - player.getWidth()/2) == cx;
+		boolean isAtSameY = false;
+		boolean isAtSameX = false;
+
+		if (cy < player.getCy() + player.getHeight()/2 && cy > player.getCy() - player.getHeight()/2)
+			isAtSameY = true;
+
+		if (cx < player.getCx() + player.getWidth() / 2 && cx > player.getCx() - player.getWidth() / 2)
+			isAtSameX = true;
+
 		return isAtSameY && isAtSameX;
 	}
 
