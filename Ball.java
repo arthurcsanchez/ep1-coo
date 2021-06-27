@@ -92,15 +92,15 @@ public class Ball {
 	*/
 	
 	public boolean checkCollision(Wall wall) {
-		boolean isAtSameY;
-		boolean isAtSameX;
-		if (wall.getWidth() > wall.getHeight()) {
-			isAtSameY = (wall.getCy() - wall.getHeight()/2) == cy;
-			isAtSameX = (wall.getCx() - wall.getWidth()/2) <= cx || (wall.getCx() + wall.getWidth()/2) >= cx;
-		} else {
-			isAtSameY = (wall.getCy() - wall.getHeight()/2) <= cy || (wall.getCy() + wall.getHeight()/2) >= cy;
-			isAtSameX = (wall.getCx() - wall.getWidth()/2) == cx;
-		}
+		boolean isAtSameY = false;
+		boolean isAtSameX = false;
+
+		if (cy < wall.getCy() + wall.getHeight()/2 && cy > wall.getCy() - wall.getHeight()/2)
+			isAtSameY = true;
+
+		if (cx < wall.getCx() + wall.getWidth() / 2 && cy > wall.getCx() - wall.getWidth() / 2)
+			isAtSameX = true;
+
 		return isAtSameY && isAtSameX;
 	}
 
