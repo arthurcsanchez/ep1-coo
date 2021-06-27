@@ -66,9 +66,9 @@ public class Ball {
 	*/
 
 	public void onPlayerCollision(String playerId) {
-		if(checkCollision(playerId))
-			this.speed = -1*(this.speed);
-		}
+
+		this.speed = -1*(this.speed);
+		
 	}
 
 	/**
@@ -78,8 +78,7 @@ public class Ball {
 	*/
 
 	public void onWallCollision(String wallId) {
-		if(checkCollision(wallId))
-			this.speed=-1*(this.speed);
+		this.speed=-1*(this.speed);
 		
 		
 	}
