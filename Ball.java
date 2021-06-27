@@ -71,8 +71,14 @@ public class Ball {
 
 	public void onPlayerCollision(String playerId) {
 
-		this.speed = -1*(this.speed);
-		
+		if(playerId.equals("Player 1")){
+			this.dx=1;
+			this.dy*=-1;
+		}
+		else{
+			this.dx=-1;
+			this.dy*=-1;
+		}	
 	}
 
 	/**
