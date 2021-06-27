@@ -71,13 +71,18 @@ public class Ball {
 
 	public void onPlayerCollision(String playerId) {
 
-		if(playerId.equals("Player 1")){
-			this.dx=1;
-			this.dy*=-1;
-		}
-		else{
-			this.dx=-1;
-			this.dy*=-1;
+		if (playerId.equals("Player 1") && dx == -1) {
+			this.dx = 1;
+			this.dy *= -1;
+		} else if (playerId.equals("Player 1") && dx == 1) {
+			this.dx = -1;
+			this.dy *= -1;
+		} else if (dx == -1) {
+			this.dx = 1;
+			this.dy *= -1;
+		} else {
+			this.dx = -1;
+			this.dy *= -1;
 		}	
 	}
 
@@ -107,10 +112,10 @@ public class Ball {
 		boolean isAtSameY = false;
 		boolean isAtSameX = false;
 
-		if (cy < wall.getCy() + wall.getHeight()/2 && cy > wall.getCy() - wall.getHeight()/2)
+		if (cy <= wall.getCy() + wall.getHeight()/2 && cy >= wall.getCy() - wall.getHeight()/2)
 			isAtSameY = true;
 
-		if (cx < wall.getCx() + wall.getWidth() / 2 && cx > wall.getCx() - wall.getWidth() / 2)
+		if (cx <= wall.getCx() + wall.getWidth() / 2 && cx >= wall.getCx() - wall.getWidth() / 2)
 			isAtSameX = true;
 
 		return isAtSameY && isAtSameX;
@@ -127,10 +132,10 @@ public class Ball {
 		boolean isAtSameY = false;
 		boolean isAtSameX = false;
 
-		if (cy < player.getCy() + player.getHeight()/2 && cy > player.getCy() - player.getHeight()/2)
+		if (cy <= player.getCy() + player.getHeight()/2 && cy >= player.getCy() - player.getHeight()/2)
 			isAtSameY = true;
 
-		if (cx < player.getCx() + player.getWidth() / 2 && cx > player.getCx() - player.getWidth() / 2)
+		if (cx <= player.getCx() + player.getWidth()/2 && cx >= player.getCx() - player.getWidth()/2)
 			isAtSameX = true;
 
 		return isAtSameY && isAtSameX;
