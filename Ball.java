@@ -104,7 +104,7 @@ public class Ball {
 		if (cy < wall.getCy() + wall.getHeight()/2 && cy > wall.getCy() - wall.getHeight()/2)
 			isAtSameY = true;
 
-		if (cx < wall.getCx() + wall.getWidth() / 2 && cy > wall.getCy() - wall.getWidth() / 2)
+		if (cx < wall.getCx() + wall.getWidth() / 2 && cx > wall.getCx() - wall.getWidth() / 2)
 			isAtSameX = true;
 
 		return isAtSameY && isAtSameX;
