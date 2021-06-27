@@ -1,0 +1,9 @@
+Arthur Calhares de Almeida Sanchez - 11831039
+Julianne Amanda de Sá Laurindo - 11894590
+
+-------
+
+Instruções para compilação e execução:
+1. Iniciar terminal na pasta src.
+2. Compilar o programa utilizando o comando "javac *.java".
+3. Executar o programa utilizando o comando "java Pong"
