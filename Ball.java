@@ -66,7 +66,7 @@ public class Ball {
 	*/
 
 	public void onPlayerCollision(String playerId) {
-			this.directionX = -1*(this.speed);
+			this.cx = -1*(this.speed);
 	}
 
 	/**
@@ -77,10 +77,10 @@ public class Ball {
 
 	public void onWallCollision(String wallId) {
 		if(wallId.equals("Top") || wallId.equals("Bottom")){
-			this.directionY=-1*(this.speed);
+			this.cy=-1*(this.speed);
 		}
 		else if(wallId.equals("Left") || wallId.equals("Right")){
-			this.directionX=-1*(this.speed);
+			this.cx=-1*(this.speed);
 		}
 	}
 	
