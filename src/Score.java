@@ -27,10 +27,10 @@ public class Score {
 
 	public void draw(){
 		if(this.playerId.equals("Player 1")){
-			GameLib.drawText(this.playerId+" | " +this.score+" |", 70, GameLib.ALIGN_LEFT);
+			GameLib.drawText(this.playerId+" | " +this.score, 70, GameLib.ALIGN_LEFT);
 		}
 		else{
-			GameLib.drawText(this.playerId+" | " +this.score+ " |", 70, GameLib.ALIGN_RIGHT);
+			GameLib.drawText(this.playerId+" | " +this.score, 70, GameLib.ALIGN_RIGHT);
 		}
 	}
 
