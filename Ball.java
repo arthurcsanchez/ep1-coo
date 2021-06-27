@@ -84,7 +84,7 @@ public class Ball {
 	public void onWallCollision(String wallId) {
 		if(wallId.equals("Top") || wallId.equals("Bottom"))
 			this.dy *= -1;
-		else if(wallId.equals("Left") || (wallId.equals("Right"))
+		else if(wallId.equals("Left") || wallId.equals("Right"))
 			this.dx *= -1;
 			
 	}
