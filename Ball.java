@@ -66,9 +66,9 @@ public class Ball {
 	*/
 
 	public void onPlayerCollision(String playerId) {
-		printf("%lf",this.speed);
-		this.speed = -1*(this.speed);
-		printf("%lf",this.speed);
+		if(checkCollision(playerId))
+			this.speed = -1*(this.speed);
+		}
 	}
 
 	/**
@@ -78,9 +78,9 @@ public class Ball {
 	*/
 
 	public void onWallCollision(String wallId) {
-		printf("%lf",this.speed);
-		this.speed=-1*(this.speed);
-		printf("%lf",this.speed);
+		if(checkCollision(wallId))
+			this.speed=-1*(this.speed);
+		
 		
 	}
 	
