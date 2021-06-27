@@ -1,5 +1,3 @@
-package src;
-
 import java.awt.*;
 
 /**
@@ -133,11 +131,15 @@ public class Ball {
 	public boolean checkCollision(Player player) {
 		boolean isAtSameY = false;
 		boolean isAtSameX = false;
+		double yUpperBoundary = cy - height/2;
+		double yLowerBoundary = cy + height/2;
+		double xLeftBoundary = cx - width/2;
+		double xRightBoundary = cx + width/2;
 
-		if (cy <= player.getCy() + player.getHeight()/2 && cy >= player.getCy() - player.getHeight()/2)
+		if (yUpperBoundary <= player.getCy() + player.getHeight()/2 && yLowerBoundary >= player.getCy() - player.getHeight()/2)
 			isAtSameY = true;
 
-		if (cx <= player.getCx() + player.getWidth()/2 && cx >= player.getCx() - player.getWidth()/2)
+		if (xLeftBoundary <= player.getCx() + player.getWidth()/2 && xRightBoundary >= player.getCx() - player.getWidth()/2)
 			isAtSameX = true;
 
 		return isAtSameY && isAtSameX;
